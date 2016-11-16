@@ -1,0 +1,21 @@
+#B024020042 賴立芸
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+K1 = 9000
+K2 = 9100
+P_Put1 = 10
+P_Put2 = 70
+Interval = 400
+
+ST1 = np.arange(K1 - Interval, K1 + Interval)
+ST2 = np.arange(K2 - Interval, K2 + Interval)
+payoff_k1 = np.minimum(ST1 - K1, 0) + P_Put1
+payoff_k2 = -np.minimum(ST2 - K2, 0) - P_Put2
+
+
+plt.plot(ST1,payoff_k1)
+plt.plot(ST2,payoff_k2)
+
+plt.show()

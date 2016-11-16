@@ -1,0 +1,18 @@
+#B024020042 賴立芸
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+K = 9100
+interval = 500
+ST = np.arange(K - interval, K + interval)
+
+
+Payoff_L = np.maximum(ST - K, 0) - P_Call   #payoff_longCall
+Payoff_S = -Payoff_L                        #payoff_ShortCall
+
+
+plt.plot(ST, Payoff_L)
+plt.plot(ST, Payoff_S)
+
+plt.show()
